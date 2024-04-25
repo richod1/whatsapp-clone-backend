@@ -19,9 +19,8 @@ app.get('/get-token',(req,res)=>{
     const channelName=req.query.channelName;
     if(!channelName){
         return res.status(400).json({error:"channelName is reqeuired"});
-    }else{
-        return res.status(201),json(channelName)
     }
+    res.status(201).json(channelName)
 
     const expirationTimeInSecond=3600;
     const currentTimestamp=Math.floor(Date.now()/1000)
