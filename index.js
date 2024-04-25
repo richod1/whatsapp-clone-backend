@@ -11,6 +11,10 @@ const appCertificate=process.env.AGORA_APP_CERT;
 
 app.use(cors())
 
+app.get('/api',(req,res)=>{
+    res.status(200).json({msg:"Api is ready!"})
+})
+
 app.get('/get-token',(req,res)=>{
     const channelName=req.query.channelName;
     if(!channelName){
